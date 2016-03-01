@@ -1014,8 +1014,6 @@ public class Item implements Cloneable {
         addCreativeItem(Item.get(Item.BOAT, 3)); // Jungle
         addCreativeItem(Item.get(Item.BOAT, 4)); // Acacia
         addCreativeItem(Item.get(Item.BOAT, 5)); // Dark Oak
-
-        addCreativeItem(Item.get(Item.SPAWN_EGG, 33)); //Creeper
         /*
         addCreativeItem(Item.get(Item.SPAWN_EGG, 15)); //Villager
         addCreativeItem(Item.get(Item.SPAWN_EGG, 10)); //Chicken
@@ -1027,6 +1025,9 @@ public class Item implements Cloneable {
         addCreativeItem(Item.get(Item.SPAWN_EGG, 16)); //Mooshroom
         addCreativeItem(Item.get(Item.SPAWN_EGG, 19)); //Bat
         addCreativeItem(Item.get(Item.SPAWN_EGG, 18)); //Rabbit
+        */
+        addCreativeItem(Item.get(Item.SPAWN_EGG, 33)); //Creeper
+        /*
         addCreativeItem(Item.get(Item.SPAWN_EGG, 38)); //Enderman
         addCreativeItem(Item.get(Item.SPAWN_EGG, 39)); //Silverfish
         addCreativeItem(Item.get(Item.SPAWN_EGG, 34)); //Skeleton
@@ -1043,7 +1044,6 @@ public class Item implements Cloneable {
         addCreativeItem(Item.get(Item.SPAWN_EGG, 21)); //Snow Golem
         addCreativeItem(Item.get(Item.SPAWN_EGG, 44)); //Zombie Villager
         */
-
         addCreativeItem(Item.get(Item.WOODEN_SWORD));
         addCreativeItem(Item.get(Item.WOODEN_HOE));
         addCreativeItem(Item.get(Item.WOODEN_SHOVEL));

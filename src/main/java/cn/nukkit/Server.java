@@ -244,6 +244,7 @@ public class Server {
                 put("motd", "Nukkit Server For Minecraft: PE");
                 put("server-port", 19132);
                 put("server-ip", "0.0.0.0");
+                put("view-distance", 16);
                 put("white-list", false);
                 put("announce-player-achievements", true);
                 put("spawn-protection", 16);
@@ -415,10 +416,11 @@ public class Server {
 
             if (!this.loadLevel(defaultName)) {
                 long seed;
+                String seedString = String.valueOf(this.getProperty("level-seed", System.currentTimeMillis()));
                 try {
-                    seed = Long.valueOf((String) this.getProperty("level-seed", System.currentTimeMillis()));
+                    seed = Long.valueOf(seedString);
                 } catch (NumberFormatException e) {
-                    seed = System.currentTimeMillis();
+                    seed = seedString.hashCode();
                 }
                 this.generateLevel(defaultName, seed == 0 ? System.currentTimeMillis() : seed);
             }
@@ -1102,7 +1104,17 @@ public class Server {
     }
 
     public int getViewDistance() {
-        return Math.max(56, (Integer) this.getConfig("chunk-sending.max-chunks", 256));
+        int distance = this.getPropertyInt("view-distance", 10);
+
+        if (distance < 10) {
+            distance = 10;
+        } else if (distance > 22) {
+            distance = 22;
+        }
+
+        this.setPropertyInt("view-distance", distance);
+
+        return distance;
     }
 
     public String getIp() {
